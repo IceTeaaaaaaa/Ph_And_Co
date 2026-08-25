@@ -10,17 +10,21 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod("ph_and_co")
+@Mod(PhAndCoMod.MODID)
 public class PhAndCoMod {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "ph_and_co";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "examplemod" namespace
+
+
+    ModItems.ITEMS.register(modEventBus);
+
+    // Registrando os novos barramentos de fluido
+        ModFluids.FLUID_TYPES.register(modEventBus);
+        ModFluids.FLUIDS.register(modEventBus);
+        ModFluids.BLOCKS.register(modEventBus);
+
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
@@ -30,10 +34,42 @@ public class PhAndCoMod {
         CREATIVE_TABS.register("tab_principal", () -> CreativeModeTab.builder()
                 .title(Component.translatable("itemGroup." + MODID))
                 .withTabsBefore(CreativeModeTabs.COMBAT) // Coloca sua aba antes da aba de Combate
-                .icon(() -> Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE.getDefaultInstance()) // Ícone temporário
+                .icon(() -> ModItems.HEATED_IRON_PLATE.get().getDefaultInstance()) // Ícone temporário
                 .displayItems((parameters, output) -> {
-                    // No futuro, os itens do Create/Overgeared customizados entrarão aqui
-                    // Exemplo: output.accept(MEU_ITEM_PONTE.get());
+
+                    output.accept(ModItems.HEATED_IRON_PLATE.get());
+                    output.accept(ModItems.HEATED_GOLD_PLATE.get());
+                    output.accept(ModItems.HEATED_STEEL_PLATE.get());
+                    output.accept(ModItems.HEATED_COOPER_PLATE.get());
+                    output.accept(ModItems.HEATED_BRASS_PLATE.get());
+                    output.accept(ModItems.HEATED_GOLD_INGOT.get());
+                    output.accept(ModItems.HEATED_BRASS_INGOT.get());
+                    output.accept(ModItems.GOLD_PLATE.get());
+                    output.accept(ModItems.BRASS_PLATE.get());
+
+                    output.accept(ModItems.INCOMPLETE_NAILS.get());
+                    output.accept(ModItems.INCOMPLETE_STEEL_NAILS.get());
+                    output.accept(ModItems.INCOMPLETE_REINFORCED_STEEL_PLATE.get());
+                    output.accept(ModItems.REINFORCED_STEEL_PLATE.get());
+
+                    output.accept(ModItems.SILICA.get());
+                    output.accept(ModItems.SALT.get());
+                    output.accept(ModItems.CALCIUM.get());
+                    output.accept(ModItems.MAGNESIUM.get());
+                    output.accept(ModItems.COMPACTED_SILICA.get());
+                    output.accept(ModItems.SULFUR.get());
+
+                    output.accept(ModItems.GLASS_POWDER.get());
+                    output.accept(ModItems.HEATED_GLASS_PANEL.get());
+                    output.accept(ModItems.REINFORCED_GLASS.get());
+                    output.accept(ModItems.SHATTERED_GLASS.get());
+                    output.accept(ModItems.LOOSE_SAND.get());
+
+                    output.accept(ModFluids.MOLTEN_GLASS.bucket().get());
+                    output.accept(ModFluids.SULFURIC_ACID.bucket().get());
+                    output.accept(ModFluids.HIDROCLORIDRIC_ACID.bucket().get());
+
+
                 }).build());
 
         // Conectando o registro ao motor do NeoForge para ele carregar no jogo
