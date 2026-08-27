@@ -9,7 +9,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 // Essa anotação faz o NeoForge ler essa classe automaticamente
-@EventBusSubscriber(modid = PhAndCoMod.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = PhAndCoMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
 
     @SubscribeEvent
@@ -17,11 +17,12 @@ public class DataGenerators {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        var lookupProvider = event.getLookupProvider();
 
-        // Provedor de modelos de itens
-        generator.addProvider(
-                event.includeClient(),
-                new ModItemModelProvider(packOutput, existingFileHelper)
-        );
+        // Provedor de Modelos (já estava aqui)
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+
+        // Provedor de Receitas (NOVO)
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
     }
 }

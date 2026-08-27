@@ -136,26 +136,25 @@ configurations {
 }
 
 dependencies {
-    // A dependência padrão do NeoForge (já deve estar aí)
+
     implementation "net.neoforged:neoforge:${neo_version}"
 
     // =================================================
-    // DEPENDÊNCIAS DO MOD PONTE (Ph & Co)
+    // DEPENDÊNCIAS DA PONTE (Ph & Co)
     // =================================================
 
-    // 1. Create (versão para NeoForge 1.21.1)
-    // O format é: group:artifact:version
-    implementation "com.simibubi.create:create-${minecraft_version}:0.5.1.j-46-neoforge"
 
-    // 2. Overgeared via CurseMaven
-    // O CurseMaven usa o formato: curse.maven:slug-do-mod-ID-do-projeto:ID-do-arquivo
-    // Projeto do Overgeared (ID fictício na URL do curseforge): 1025586
-    // Arquivo NeoForge 1.21.1: 5678123 (Esses IDs são exemplos, vamos pegar o exato se der erro)
-    // Exemplo de como a linha fica:
-    implementation "curse.maven:overgeared-1025586:5678123"
+    implementation "curse.maven:create-328085:7963363"
 
-    // 3. Cold Sweat (Opcional por agora, adicione depois se pesar a inicialização)
-    // implementation "curse.maven:cold-sweat-364219:5798412"
+    implementation "curse.maven:overgeared-1277786:8298434"
+
+    implementation "curse.maven:cold-sweat-506194:7898055"
+
+    implementation "curse.maven:create-gunsmithing-1194036:8501347"
+
+    implementation "curse.maven:ntgl-998474:8585353"
+
+    implementation "curse.maven:geckolib-388172:8350073"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

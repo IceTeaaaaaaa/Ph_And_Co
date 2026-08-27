@@ -9,7 +9,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 public class ModItemModelProvider extends ItemModelProvider {
 
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, PhAndCoMod.MODID, existingFileHelper);
+        super(output, PhAndCoMod.MOD_ID, existingFileHelper);
     }
 
     @Override
