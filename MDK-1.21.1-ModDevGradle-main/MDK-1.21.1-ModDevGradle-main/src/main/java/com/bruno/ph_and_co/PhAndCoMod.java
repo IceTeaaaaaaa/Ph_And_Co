@@ -8,11 +8,13 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(PhAndCoMod.MOD_ID)
 public class PhAndCoMod {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "ph_and_co";
+
 //    public static final Logger LOGGER = LogUtils.getLogger();
 
 
@@ -23,6 +25,7 @@ public class PhAndCoMod {
 
     public PhAndCoMod(IEventBus modEventBus) {
 
+        modEventBus.addListener(com.bruno.ph_and_co.datagen.DataGenerators::gatherData);
 
         ModItems.ITEMS.register(modEventBus);
 
@@ -64,6 +67,10 @@ public class PhAndCoMod {
                     output.accept(ModItems.REINFORCED_GLASS.get());
                     output.accept(ModItems.SHATTERED_GLASS.get());
                     output.accept(ModItems.LOOSE_SAND.get());
+
+                    output.accept(ModItems.NAIL.get());
+                    output.accept(ModItems.NAIL_STEEL.get());
+                    output.accept(ModItems.BRASS_SCREW.get());
 
                     output.accept(ModFluids.MOLTEN_GLASS.bucket().get());
                     output.accept(ModFluids.SULFURIC_ACID.bucket().get());

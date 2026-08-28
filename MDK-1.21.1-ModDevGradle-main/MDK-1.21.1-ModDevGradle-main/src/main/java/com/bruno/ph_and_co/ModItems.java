@@ -46,4 +46,13 @@ public class ModItems {
     public static final DeferredItem<Item> HEATED_GLASS_PANEL = ITEMS.registerSimpleItem("heated_glass_panel", new Item.Properties());
     public static final DeferredItem<Item> SHATTERED_GLASS = ITEMS.registerSimpleItem("shattered_glass", new Item.Properties());
     public static final DeferredItem<Item> LOOSE_SAND = ITEMS.registerSimpleItem("loose_sand", new Item.Properties());
+
+    // -------------------------------------------------------------
+    // Clock work
+    // -------------------------------------------------------------
+    public static final DeferredItem<Item> NAIL = ITEMS.registerSimpleItem("nail", new Item.Properties());
+    public static final DeferredItem<Item> NAIL_STEEL = ITEMS.registerSimpleItem("nail_steel", new Item.Properties());
+    public static final DeferredItem<Item> BRASS_SCREW = ITEMS.registerSimpleItem("brass_screw", new Item.Properties());
+
+
 }

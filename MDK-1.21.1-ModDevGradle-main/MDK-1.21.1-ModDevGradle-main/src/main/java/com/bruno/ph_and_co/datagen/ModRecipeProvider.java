@@ -17,6 +17,7 @@ import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.util.concurrent.CompletableFuture;
 
+
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
@@ -38,7 +39,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:mechanical_press"))
                 .pattern(" A ").pattern("BCB").pattern(" D ")
                 .define('A', getExternalItem("create:shaft"))
-                .define('B', getExternalItem("cgs:nail"))
+                .define('B', getExternalItem("ph_and_co:nail"))
                 .define('C', getExternalItem("create:andesite_casing"))
                 .define('D', Items.IRON_BLOCK)
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
@@ -47,7 +48,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:mechanical_mixer"))
                 .pattern(" A ").pattern("BCB").pattern(" D ")
                 .define('A', getExternalItem("create:cogwheel"))
-                .define('B', getExternalItem("cgs:nail"))
+                .define('B', getExternalItem("ph_and_co:nail"))
                 .define('C', getExternalItem("create:andesite_casing"))
                 .define('D', getExternalItem("create:whisk"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
@@ -55,7 +56,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:water_wheel"))
                 .pattern("ABA").pattern("BCB").pattern("ABA")
-                .define('A', getExternalItem("cgs:nail"))
+                .define('A', getExternalItem("ph_and_co:nail"))
                 .define('B', ItemTags.PLANKS)
                 .define('C', getExternalItem("create:shaft"))
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
@@ -63,7 +64,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:large_water_wheel"))
                 .pattern("ABA").pattern("BCB").pattern("ABA")
-                .define('A', getExternalItem("cgs:nail_steel"))
+                .define('A', getExternalItem("ph_and_co:nail_steel"))
                 .define('B', ItemTags.PLANKS)
                 .define('C', getExternalItem("create:water_wheel"))
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
@@ -72,7 +73,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:encased_fan"))
                 .pattern(" A ").pattern("BCB").pattern(" D ")
                 .define('A', getExternalItem("create:cogwheel"))
-                .define('B', getExternalItem("cgs:nail"))
+                .define('B', getExternalItem("ph_and_co:nail"))
                 .define('C', getExternalItem("create:andesite_casing"))
                 .define('D', getExternalItem("create:propeller"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
@@ -80,7 +81,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:gearbox"))
                 .pattern("ABA").pattern("BCB").pattern("ABA")
-                .define('A', getExternalItem("cgs:nail"))
+                .define('A', getExternalItem("ph_and_co:nail"))
                 .define('B', getExternalItem("create:cogwheel"))
                 .define('C', getExternalItem("create:andesite_casing"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
@@ -89,7 +90,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:vertical_gearbox"))
                 .pattern("ABA").pattern("BCB").pattern("ABA")
                 .define('A', getExternalItem("create:cogwheel"))
-                .define('B', getExternalItem("cgs:nail"))
+                .define('B', getExternalItem("ph_and_co:nail"))
                 .define('C', getExternalItem("create:andesite_casing"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/vertical_gearbox"));
@@ -97,7 +98,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:weighted_ejector"))
                 .pattern(" A ").pattern("BCB").pattern(" D ")
                 .define('A', getExternalItem("overgeared:steel_plate"))
-                .define('B', getExternalItem("cgs:nail"))
+                .define('B', getExternalItem("ph_and_co:nail"))
                 .define('C', getExternalItem("create:andesite_casing"))
                 .define('D', getExternalItem("create:cogwheel"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
@@ -108,7 +109,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', getExternalItem("create:andesite_casing"))
                 .define('B', getExternalItem("create:shaft"))
                 .define('C', Items.REDSTONE)
-                .define('D', getExternalItem("cgs:nail"))
+                .define('D', getExternalItem("ph_and_co:nail"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/clutch"));
 
@@ -117,7 +118,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', getExternalItem("create:andesite_casing"))
                 .define('B', getExternalItem("create:cogwheel"))
                 .define('C', Items.REDSTONE)
-                .define('D', getExternalItem("cgs:nail"))
+                .define('D', getExternalItem("ph_and_co:nail"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/gearshift"));
 
@@ -125,7 +126,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("AB").pattern("BC")
                 .define('A', getExternalItem("create:andesite_casing"))
                 .define('B', Items.IRON_NUGGET)
-                .define('C', getExternalItem("cgs:nail"))
+                .define('C', getExternalItem("ph_and_co:nail"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/encased_chain_drive"));
 
@@ -133,7 +134,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("AB").pattern("BC")
                 .define('A', getExternalItem("create:andesite_casing"))
                 .define('B', getExternalItem("create:zinc_nugget"))
-                .define('C', getExternalItem("cgs:nail"))
+                .define('C', getExternalItem("ph_and_co:nail"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/encased_chain_drive_from_zinc"));
 
@@ -141,7 +142,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("AB").pattern("BC")
                 .define('A', getExternalItem("create:shaft"))
                 .define('B', ItemTags.PLANKS)
-                .define('C', getExternalItem("cgs:nail"))
+                .define('C', getExternalItem("ph_and_co:nail"))
                 .unlockedBy("has_shaft", has(getExternalItem("create:shaft")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/large_cogwheel"));
 
@@ -149,7 +150,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("AB").pattern("C ")
                 .define('A', getExternalItem("create:shaft"))
                 .define('B', ItemTags.PLANKS)
-                .define('C', getExternalItem("cgs:nail"))
+                .define('C', getExternalItem("ph_and_co:nail"))
                 .unlockedBy("has_shaft", has(getExternalItem("create:shaft")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/cogwheel"));
 
@@ -161,7 +162,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" A ").pattern("ABA").pattern("CDC")
                 .define('A', getExternalItem("create:andesite_alloy"))
                 .define('B', Items.IRON_INGOT)
-                .define('C', getExternalItem("cgs:nail"))
+                .define('C', getExternalItem("ph_and_co:nail"))
                 .define('D', getExternalItem("create:andesite_casing"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/mechanical_drill"));
@@ -170,7 +171,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" A ").pattern("ABA").pattern("CDC")
                 .define('A', getExternalItem("overgeared:iron_plate"))
                 .define('B', Items.IRON_INGOT)
-                .define('C', getExternalItem("cgs:nail"))
+                .define('C', getExternalItem("ph_and_co:nail"))
                 .define('D', getExternalItem("create:andesite_casing"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/mechanical_saw"));
@@ -178,7 +179,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:deployer"))
                 .pattern(" A ").pattern("BCB").pattern(" D ")
                 .define('A', getExternalItem("create:electron_tube"))
-                .define('B', getExternalItem("cgs:nail_steel"))
+                .define('B', getExternalItem("ph_and_co:nail_steel"))
                 .define('C', getExternalItem("create:andesite_casing"))
                 .define('D', getExternalItem("create:brass_hand"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
@@ -188,7 +189,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("AB").pattern("C ")
                 .define('A', getExternalItem("create:andesite_casing"))
                 .define('B', getExternalItem("create:chute"))
-                .define('C', getExternalItem("cgs:nail"))
+                .define('C', getExternalItem("ph_and_co:nail"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/portable_storage_interface"));
 
@@ -196,7 +197,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("BAB").pattern("BAB").pattern("CDC")
                 .define('A', getExternalItem("overgeared:iron_plate"))
                 .define('B', getExternalItem("create:andesite_alloy"))
-                .define('C', getExternalItem("cgs:nail"))
+                .define('C', getExternalItem("ph_and_co:nail"))
                 .define('D', getExternalItem("create:andesite_casing"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/mechanical_harvester"));
@@ -205,7 +206,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("AAA").pattern("BBB").pattern("CDC")
                 .define('A', getExternalItem("overgeared:iron_plate"))
                 .define('B', getExternalItem("create:andesite_alloy"))
-                .define('C', getExternalItem("cgs:nail"))
+                .define('C', getExternalItem("ph_and_co:nail"))
                 .define('D', getExternalItem("create:andesite_casing"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/mechanical_plough"));
@@ -213,7 +214,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:mechanical_roller"))
                 .pattern(" A ").pattern("BCB").pattern(" D ")
                 .define('A', getExternalItem("create:electron_tube"))
-                .define('B', getExternalItem("cgs:nail_steel"))
+                .define('B', getExternalItem("ph_and_co:nail_steel"))
                 .define('C', getExternalItem("create:andesite_casing"))
                 .define('D', getExternalItem("create:crushing_wheel"))
                 .unlockedBy("has_casing", has(getExternalItem("create:andesite_casing")))
@@ -222,7 +223,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:mechanical_crafter"), 3)
                 .pattern(" A ").pattern("BCB").pattern(" D ")
                 .define('A', getExternalItem("create:electron_tube"))
-                .define('B', getExternalItem("cgs:nail_steel"))
+                .define('B', getExternalItem("ph_and_co:nail_steel"))
                 .define('C', getExternalItem("create:brass_casing"))
                 .define('D', Items.CRAFTING_TABLE)
                 .unlockedBy("has_casing", has(getExternalItem("create:brass_casing")))
@@ -233,14 +234,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', getExternalItem("create:brass_casing"))
                 .define('B', getExternalItem("create:cogwheel"))
                 .define('C', getExternalItem("create:electron_tube"))
-                .define('D', getExternalItem("cgs:nail_steel"))
+                .define('D', getExternalItem("ph_and_co:nail_steel"))
                 .unlockedBy("has_casing", has(getExternalItem("create:brass_casing")))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/sequenced_gearshift"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("create:rotation_speed_controller"))
                 .pattern(" A ").pattern("BCB").pattern(" D ")
                 .define('A', getExternalItem("create:precision_mechanism"))
-                .define('B', getExternalItem("cgs:nail_steel"))
+                .define('B', getExternalItem("ph_and_co:nail_steel"))
                 .define('C', getExternalItem("create:brass_casing"))
                 .define('D', ModItems.REINFORCED_STEEL_PLATE.get())
                 .unlockedBy("has_casing", has(getExternalItem("create:brass_casing")))
@@ -250,7 +251,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("AAB").pattern("ACC").pattern("DEF")
                 .define('A', ModItems.BRASS_PLATE.get())
                 .define('B', getExternalItem("create:andesite_alloy"))
-                .define('C', getExternalItem("cgs:nail_steel"))
+                .define('C', getExternalItem("ph_and_co:nail_steel"))
                 .define('D', getExternalItem("create:precision_mechanism"))
                 .define('E', getExternalItem("create:brass_casing"))
                 .define('F', ModItems.REINFORCED_STEEL_PLATE.get())
