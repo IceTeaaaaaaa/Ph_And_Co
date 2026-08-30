@@ -61,7 +61,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addInput(new SizedIngredient(Ingredient.of(ModItems.MAGNESIUM.get()), 1))
 
                 // Output
-                .addOutput(new ItemStack(ModItems.GLASS_POWDER.get(), 3))
+                .addOutput(new ItemStack(ModItems.GLASS_POWDER.get(), 3), 1.0f)
 
                 // Process Time(Ticks)
                 .setTime(20)
@@ -77,7 +77,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addInput(new SizedIngredient(Ingredient.of(ModItems.SILICA.get()), 1))
                 .addInput(new SizedIngredient(Ingredient.of(ModItems.SHATTERED_GLASS.get()), 1))
 
-                .addOutput(new ItemStack(ModItems.GLASS_POWDER.get(), 1))
+                .addOutput(new ItemStack(ModItems.GLASS_POWDER.get(), 1), 1.0f)
                 .setTime(15)
 
                 .unlockedBy("has_shattered_glass", has(ModItems.SHATTERED_GLASS.get()))
@@ -87,7 +87,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
                 .addInput(new SizedIngredient(Ingredient.of(Tags.Items.SANDS), 3))
 
-                .addOutput(new ItemStack(ModItems.SILICA.get(), 4))
+                .addOutput(new ItemStack(ModItems.SILICA.get(), 4), 1.0f)
                 .setTime(15)
 
                 .unlockedBy("has_sand", has(ItemTags.SAND))
@@ -97,7 +97,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
                 .addInput(new SizedIngredient(Ingredient.of(Items.QUARTZ), 2))
 
-                .addOutput(new ItemStack(ModItems.SILICA.get(), 5))
+                .addOutput(new ItemStack(ModItems.SILICA.get(), 5), 1.0f)
                 .setTime(20)
 
                 .unlockedBy("has_quartz", has(Items.QUARTZ))
@@ -107,7 +107,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
                 .addInput(new SizedIngredient(Ingredient.of(Tags.Items.GLASS_BLOCKS), 1))
 
-                .addOutput(new ItemStack(ModItems.SHATTERED_GLASS.get(), 5))
+                .addOutput(new ItemStack(ModItems.SHATTERED_GLASS.get(), 5), 1.0f)
                 .setTime(20)
 
                 .unlockedBy("has_glass", has(Items.GLASS))
@@ -117,7 +117,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
                 .addInput(new SizedIngredient(Ingredient.of(Items.BLAZE_ROD), 1))
 
-                .addOutput(new ItemStack(Items.BLAZE_POWDER, 3))
+                .addOutput(new ItemStack(Items.BLAZE_POWDER, 3), 1.0f)
                 .addOutput(new ItemStack(Items.BLAZE_POWDER, 1), 0.3f)
                 .setTime(15)
 
@@ -154,7 +154,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 MortarRecipeBuilder.builder()
                         .addInput((new SizedIngredient(Ingredient.of(ModItems.SILICA.get()), 1)))
                         .addInput(new SizedIngredient(Ingredient.of(flowerItem), 1))
-                        .addOutput(new ItemStack(correspondingDye, 4))
+                        .addOutput(new ItemStack(correspondingDye, 4), 1.0f)
                         .setTime(15)
                         .unlockedBy("has_flower", has(flowerItem))
                         .save(output, ResourceLocation.fromNamespaceAndPath("ph_and_co", "mortar_dye_" + id.getPath()));
@@ -167,7 +167,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addInput(new SizedIngredient(Ingredient.of(ModItems.SULFUR), 1))
                 .addInput(new SizedIngredient(Ingredient.of(Items.BONE_MEAL), 4))
 
-                .addOutput(new ItemStack(Items.GUNPOWDER, 2))
+                .addOutput(new ItemStack(Items.GUNPOWDER, 2), 1.0f)
                 .setTime(20)
 
                 .unlockedBy("has_sulfur", has(ModItems.SULFUR))

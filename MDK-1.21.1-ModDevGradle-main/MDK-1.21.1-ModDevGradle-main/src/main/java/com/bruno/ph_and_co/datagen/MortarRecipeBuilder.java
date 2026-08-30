@@ -43,10 +43,6 @@ public class MortarRecipeBuilder implements RecipeBuilder {
         return this;
     }
 
-    public MortarRecipeBuilder addOutput(ItemStack stack) {
-        return addOutput(stack, 1.0f);
-    }
-
     public MortarRecipeBuilder setTime(int ticks) {
         this.processTime = ticks;
         return this;

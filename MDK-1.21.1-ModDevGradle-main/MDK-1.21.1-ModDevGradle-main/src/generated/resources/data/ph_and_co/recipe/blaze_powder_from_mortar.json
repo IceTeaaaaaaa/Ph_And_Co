@@ -1,0 +1,25 @@
+{
+  "type": "ph_and_co:mortar",
+  "ingredients": [
+    {
+      "count": 1,
+      "item": "minecraft:blaze_rod"
+    }
+  ],
+  "processing_time": 15,
+  "results": [
+    {
+      "item": {
+        "count": 3,
+        "id": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "chance": 0.3,
+      "item": {
+        "count": 1,
+        "id": "minecraft:blaze_powder"
+      }
+    }
+  ]
+}

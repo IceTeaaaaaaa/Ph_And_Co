@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_silica": {
+    "has_blaze_rod": {
       "conditions": {
         "items": [
           {
-            "items": "ph_and_co:silica"
+            "items": "minecraft:blaze_rod"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ph_and_co:glass_powder_full"
+        "recipe": "ph_and_co:blaze_powder_from_mortar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_silica"
+      "has_blaze_rod"
     ]
   ],
   "rewards": {
     "recipes": [
-      "ph_and_co:glass_powder_full"
+      "ph_and_co:blaze_powder_from_mortar"
     ]
   }
 }
