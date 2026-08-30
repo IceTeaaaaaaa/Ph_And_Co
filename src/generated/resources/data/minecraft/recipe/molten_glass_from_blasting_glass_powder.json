@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "ph_and_co:glass_powder"
+  },
+  "result": {
+    "count": 1,
+    "id": "ph_and_co:molten_glass_blob"
+  }
+}

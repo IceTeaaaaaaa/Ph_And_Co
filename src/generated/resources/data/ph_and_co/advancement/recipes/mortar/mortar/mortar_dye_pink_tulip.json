@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:pink_tulip"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ph_and_co:mortar/mortar_dye_pink_tulip"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_flower"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ph_and_co:mortar/mortar_dye_pink_tulip"
+    ]
+  }
+}

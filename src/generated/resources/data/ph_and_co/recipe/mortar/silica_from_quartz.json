@@ -1,0 +1,25 @@
+{
+  "type": "ph_and_co:mortar",
+  "ingredients": [
+    {
+      "count": 1,
+      "item": "minecraft:quartz"
+    }
+  ],
+  "processing_time": 15,
+  "results": [
+    {
+      "item": {
+        "count": 2,
+        "id": "ph_and_co:silica"
+      }
+    },
+    {
+      "chance": 0.5,
+      "item": {
+        "count": 1,
+        "id": "ph_and_co:silica"
+      }
+    }
+  ]
+}

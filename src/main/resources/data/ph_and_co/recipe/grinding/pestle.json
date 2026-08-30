@@ -1,0 +1,9 @@
+{
+  "type": "overgeared:grinding",
+  "input": {
+    "item": "minecraft:blackstone"
+  },
+  "output": {
+    "id": "ph_and_co:pestle"
+  }
+}

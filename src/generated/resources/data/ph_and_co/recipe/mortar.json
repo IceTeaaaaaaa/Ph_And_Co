@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ph_and_co:mortar_base"
+    },
+    {
+      "item": "ph_and_co:pestle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "ph_and_co:mortar"
+  }
+}

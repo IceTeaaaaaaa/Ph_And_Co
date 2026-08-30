@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_silica": {
+      "conditions": {
+        "items": [
+          {
+            "items": "ph_and_co:silica"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ph_and_co:mortar/glass_powder_full_recipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_silica"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ph_and_co:mortar/glass_powder_full_recipe"
+    ]
+  }
+}
