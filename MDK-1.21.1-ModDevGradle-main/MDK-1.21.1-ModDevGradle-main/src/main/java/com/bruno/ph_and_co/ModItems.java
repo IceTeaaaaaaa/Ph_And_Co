@@ -1,8 +1,11 @@
 package com.bruno.ph_and_co;
 
+import com.bruno.ph_and_co.item.MortarItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem; // Importação necessária
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PhAndCoMod.MOD_ID);
@@ -31,12 +34,15 @@ public class ModItems {
     // -------------------------------------------------------------
     // Chemical Powders and Compounds
     // -------------------------------------------------------------
+
+    public static final Supplier<Item> MORTAR = ITEMS.register("mortar", () -> new MortarItem(new Item.Properties().stacksTo(1)));
+
     public static final DeferredItem<Item> SILICA = ITEMS.registerSimpleItem("silica", new Item.Properties());
     public static final DeferredItem<Item> SALT = ITEMS.registerSimpleItem("salt", new Item.Properties());
     public static final DeferredItem<Item> CALCIUM = ITEMS.registerSimpleItem("calcium", new Item.Properties());
     public static final DeferredItem<Item> MAGNESIUM = ITEMS.registerSimpleItem("magnesium", new Item.Properties());
-    public static final DeferredItem<Item> COMPACTED_SILICA = ITEMS.registerSimpleItem("compacted_silica", new Item.Properties());
     public static final DeferredItem<Item> SULFUR = ITEMS.registerSimpleItem("sulfur", new Item.Properties());
+    public static final DeferredItem<Item> CRUSHED_ANDESITE = ITEMS.registerSimpleItem("crushed_andesite", new Item.Properties());
 
     // -------------------------------------------------------------
     // Glass
@@ -46,6 +52,8 @@ public class ModItems {
     public static final DeferredItem<Item> HEATED_GLASS_PANEL = ITEMS.registerSimpleItem("heated_glass_panel", new Item.Properties());
     public static final DeferredItem<Item> SHATTERED_GLASS = ITEMS.registerSimpleItem("shattered_glass", new Item.Properties());
     public static final DeferredItem<Item> LOOSE_SAND = ITEMS.registerSimpleItem("loose_sand", new Item.Properties());
+    public static final DeferredItem<Item> MOLTEN_GLASS_BLOB = ITEMS.registerSimpleItem("molten_glass_blob", new Item.Properties());
+
 
     // -------------------------------------------------------------
     // Clock work

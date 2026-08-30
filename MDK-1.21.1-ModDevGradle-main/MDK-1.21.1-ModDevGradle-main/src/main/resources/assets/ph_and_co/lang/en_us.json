@@ -25,12 +25,15 @@
   "item.ph_and_co.magnesium": "Magnesium",
   "item.ph_and_co.compacted_silica": "Compacted Silica",
   "item.ph_and_co.sulfur": "Sulfur",
+  "item.ph_and_co.crushed_andesite": "Crushed Andesite",
 
+  "item.ph_and_co.mortar": "Mortar",
   "item.ph_and_co.glass_powder": "Glass Powder",
   "item.ph_and_co.reinforced_glass": "Reinforced Glass",
   "item.ph_and_co.heated_glass_panel": "Heated Glass Panel",
   "item.ph_and_co.shattered_glass": "Shattered Glass",
   "item.ph_and_co.loose_sand": "Loose Sand",
+  "item.ph_and_co.molten_glass_blob": "Molten Glass",
 
   "item.ph_and_co.molten_glass_bucket": "Molten Glass Bucket",
   "item.ph_and_co.sulfuric_acid_bucket": "Sulfuric Acid Bucket",

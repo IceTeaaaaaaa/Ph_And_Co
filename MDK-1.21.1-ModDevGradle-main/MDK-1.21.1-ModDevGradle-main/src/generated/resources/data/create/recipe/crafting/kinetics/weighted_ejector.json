@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "overgeared:steel_plate"
+    },
+    "B": {
+      "item": "ph_and_co:nail"
+    },
+    "C": {
+      "item": "create:andesite_casing"
+    },
+    "D": {
+      "item": "create:cogwheel"
+    }
+  },
+  "pattern": [
+    " A ",
+    "BCB",
+    " D "
+  ],
+  "result": {
+    "count": 1,
+    "id": "create:weighted_ejector"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "ph_and_co:heated_steel_plate"
+  },
+  "results": [
+    {
+      "id": "ph_and_co:reinforced_steel_plate"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_reinforced_steel_plate"
+        },
+        {
+          "item": "ph_and_co:heated_iron_plate"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_reinforced_steel_plate"
+        },
+        {
+          "item": "ph_and_co:heated_steel_plate"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_reinforced_steel_plate"
+        },
+        {
+          "item": "ph_and_co:nail_steel"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_reinforced_steel_plate"
+        },
+        {
+          "item": "ph_and_co:nail_steel"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_reinforced_steel_plate"
+        },
+        {
+          "item": "ph_and_co:nail_steel"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_reinforced_steel_plate"
+        },
+        {
+          "item": "ph_and_co:nail_steel"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_reinforced_steel_plate"
+        },
+        {
+          "type": "neoforge:single",
+          "amount": 250,
+          "fluid": "minecraft:water"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_reinforced_steel_plate"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "ph_and_co:incomplete_reinforced_steel_plate"
+  }
+}

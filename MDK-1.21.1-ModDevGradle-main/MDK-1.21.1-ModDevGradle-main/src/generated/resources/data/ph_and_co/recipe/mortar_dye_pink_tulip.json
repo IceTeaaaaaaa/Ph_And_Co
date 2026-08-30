@@ -1,0 +1,22 @@
+{
+  "type": "ph_and_co:mortar",
+  "ingredients": [
+    {
+      "count": 1,
+      "item": "ph_and_co:silica"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:pink_tulip"
+    }
+  ],
+  "processing_time": 15,
+  "results": [
+    {
+      "item": {
+        "count": 4,
+        "id": "minecraft:pink_dye"
+      }
+    }
+  ]
+}

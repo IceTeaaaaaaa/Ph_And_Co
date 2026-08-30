@@ -1,0 +1,29 @@
+{
+  "type": "ph_and_co:mortar",
+  "ingredients": [
+    {
+      "count": 9,
+      "item": "ph_and_co:silica"
+    },
+    {
+      "count": 3,
+      "item": "ph_and_co:salt"
+    },
+    {
+      "count": 2,
+      "item": "ph_and_co:calcium"
+    },
+    {
+      "count": 1,
+      "item": "ph_and_co:magnesium"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "count": 3,
+        "id": "ph_and_co:glass_powder"
+      }
+    }
+  ]
+}

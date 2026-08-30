@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "ph_and_co:heated_gold_ingot"
+    }
+  ],
+  "results": [
+    {
+      "id": "ph_and_co:heated_gold_ingot"
+    }
+  ]
+}

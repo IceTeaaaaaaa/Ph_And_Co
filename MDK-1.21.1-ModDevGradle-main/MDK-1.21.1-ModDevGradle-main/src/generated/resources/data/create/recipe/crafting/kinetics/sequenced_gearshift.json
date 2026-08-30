@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "create:brass_casing"
+    },
+    "B": {
+      "item": "create:cogwheel"
+    },
+    "C": {
+      "item": "create:electron_tube"
+    },
+    "D": {
+      "item": "ph_and_co:nail_steel"
+    }
+  },
+  "pattern": [
+    "AB",
+    "CD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create:sequenced_gearshift"
+  }
+}

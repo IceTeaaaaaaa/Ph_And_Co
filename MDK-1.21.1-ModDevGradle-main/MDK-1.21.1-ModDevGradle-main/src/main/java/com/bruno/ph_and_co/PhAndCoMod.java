@@ -1,12 +1,19 @@
 package com.bruno.ph_and_co;
 
+import com.bruno.ph_and_co.menu.ModMenus;
+import com.bruno.ph_and_co.recipe.ModRecipes;
+import com.bruno.ph_and_co.screen.ClientSetup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.registries.DeferredRegister;
+ import net.neoforged.neoforge.common.NeoForge;
+ import com.bruno.ph_and_co.menu.MortarMenu;
 
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -32,6 +39,17 @@ public class PhAndCoMod {
         ModFluids.FLUID_TYPES.register(modEventBus);
         ModFluids.FLUIDS.register(modEventBus);
         ModFluids.BLOCKS.register(modEventBus);
+
+        ModRecipes.SERIALIZERS.register(modEventBus);
+        ModRecipes.TYPES.register(modEventBus);
+        ModMenus.MENUS.register(modEventBus);
+
+
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            modEventBus.addListener(ClientSetup::onRegisterMenus);
+        }
+
+        NeoForge.EVENT_BUS.addListener(MortarMenu::onPlayerTick);
 
 
         CREATIVE_TABS.register("tab_principal", () -> CreativeModeTab.builder()
@@ -59,10 +77,12 @@ public class PhAndCoMod {
                     output.accept(ModItems.SALT.get());
                     output.accept(ModItems.CALCIUM.get());
                     output.accept(ModItems.MAGNESIUM.get());
-                    output.accept(ModItems.COMPACTED_SILICA.get());
                     output.accept(ModItems.SULFUR.get());
+                    output.accept(ModItems.CRUSHED_ANDESITE.get());
 
+                    output.accept(ModItems.MORTAR.get());
                     output.accept(ModItems.GLASS_POWDER.get());
+                    output.accept(ModItems.MOLTEN_GLASS_BLOB.get());
                     output.accept(ModItems.HEATED_GLASS_PANEL.get());
                     output.accept(ModItems.REINFORCED_GLASS.get());
                     output.accept(ModItems.SHATTERED_GLASS.get());

@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "overgeared:heated_steel_ingot"
+    }
+  ],
+  "results": [
+    {
+      "id": "ph_and_co:heated_steel_plate"
+    }
+  ]
+}

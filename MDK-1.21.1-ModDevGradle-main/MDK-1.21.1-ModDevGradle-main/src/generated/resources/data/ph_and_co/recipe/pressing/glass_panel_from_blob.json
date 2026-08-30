@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "ph_and_co:molten_glass_blob"
+    }
+  ],
+  "results": [
+    {
+      "id": "ph_and_co:heated_glass_panel"
+    }
+  ]
+}

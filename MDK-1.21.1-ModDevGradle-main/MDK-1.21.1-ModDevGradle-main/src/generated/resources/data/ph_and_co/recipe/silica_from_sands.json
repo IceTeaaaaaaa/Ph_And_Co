@@ -1,0 +1,18 @@
+{
+  "type": "ph_and_co:mortar",
+  "ingredients": [
+    {
+      "count": 3,
+      "tag": "c:sands"
+    }
+  ],
+  "processing_time": 15,
+  "results": [
+    {
+      "item": {
+        "count": 4,
+        "id": "ph_and_co:silica"
+      }
+    }
+  ]
+}

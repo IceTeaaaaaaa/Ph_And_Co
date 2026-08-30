@@ -1,0 +1,28 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "ph_and_co:heated_glass_panel"
+    },
+    {
+      "item": "ph_and_co:heated_glass_panel"
+    },
+    {
+      "item": "ph_and_co:heated_glass_panel"
+    },
+    {
+      "item": "ph_and_co:heated_glass_panel"
+    },
+    {
+      "item": "ph_and_co:heated_glass_panel"
+    },
+    {
+      "item": "ph_and_co:heated_glass_panel"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:glass"
+    }
+  ]
+}

@@ -76,20 +76,20 @@ neoForge {
         client {
             client()
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'ph_and_co'
         }
 
         server {
             server()
             programArgument '--nogui'
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'ph_and_co'
         }
         // This run config launches GameTestServer and runs all registered gametests, then exits.
         // By default, the server will crash when no gametests are provided.
         // The gametest system is also enabled by default for other run configs under the /test command.
         gameTestServer {
             type = "gameTestServer"
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'ph_and_co'
         }
 
         data {
@@ -98,7 +98,7 @@ neoForge {
             // gameDirectory = project.file('run-data')
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+            programArguments.addAll '--mod', 'ph_and_co', '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
         }
 
         // applies to all the run configs above
@@ -148,13 +148,7 @@ dependencies {
 
     implementation "curse.maven:overgeared-1277786:8298434"
 
-    implementation "curse.maven:cold-sweat-506194:7898055"
-
-//    implementation "curse.maven:create-gunsmithing-1194036:8501347"
-//
-//    implementation "curse.maven:ntgl-998474:8585353"
-//
-//    implementation "curse.maven:geckolib-388172:8350073"
+//    implementation "curse.maven:cold-sweat-506194:7898055"
 
     runtimeOnly "curse.maven:jei-238222:8732390"
 
@@ -179,8 +173,11 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
     from "src/main/templates"
     into "build/generated/sources/modMetadata"
 }
-// Include the output of "generateModMetadata" as an input directory for the build
-// this works with both building through Gradle and the IDE.
+
+tasks.withType(ProcessResources).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
 sourceSets.main.resources.srcDir generateModMetadata
 sourceSets {
     main {
@@ -217,3 +214,5 @@ idea {
         downloadJavadoc = true
     }
 }
+
+

@@ -1,0 +1,17 @@
+{
+  "type": "ph_and_co:mortar",
+  "ingredients": [
+    {
+      "count": 2,
+      "item": "minecraft:quartz"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "count": 5,
+        "id": "ph_and_co:silica"
+      }
+    }
+  ]
+}

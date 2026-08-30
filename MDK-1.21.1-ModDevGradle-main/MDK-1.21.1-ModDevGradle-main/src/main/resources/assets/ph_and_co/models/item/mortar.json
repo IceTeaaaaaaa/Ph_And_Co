@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "ph_and_co:item/compacted_silica"
+    "layer0": "ph_and_co:item/mortar"
   }
 }

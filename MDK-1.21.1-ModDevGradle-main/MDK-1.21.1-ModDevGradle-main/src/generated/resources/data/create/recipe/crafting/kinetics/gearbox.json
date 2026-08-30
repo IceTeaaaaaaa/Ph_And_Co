@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "ph_and_co:nail"
+    },
+    "B": {
+      "item": "create:cogwheel"
+    },
+    "C": {
+      "item": "create:andesite_casing"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create:gearbox"
+  }
+}

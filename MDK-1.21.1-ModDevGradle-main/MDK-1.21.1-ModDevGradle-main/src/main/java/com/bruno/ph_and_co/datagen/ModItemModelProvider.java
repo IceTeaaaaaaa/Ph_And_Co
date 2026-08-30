@@ -37,7 +37,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SALT.get());
         basicItem(ModItems.CALCIUM.get());
         basicItem(ModItems.MAGNESIUM.get());
-        basicItem(ModItems.COMPACTED_SILICA.get());
         basicItem(ModItems.SULFUR.get());
 
         // Glass

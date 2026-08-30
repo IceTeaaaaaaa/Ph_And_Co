@@ -1,0 +1,22 @@
+{
+  "type": "ph_and_co:mortar",
+  "ingredients": [
+    {
+      "count": 1,
+      "item": "ph_and_co:silica"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:sunflower"
+    }
+  ],
+  "processing_time": 15,
+  "results": [
+    {
+      "item": {
+        "count": 4,
+        "id": "minecraft:yellow_dye"
+      }
+    }
+  ]
+}

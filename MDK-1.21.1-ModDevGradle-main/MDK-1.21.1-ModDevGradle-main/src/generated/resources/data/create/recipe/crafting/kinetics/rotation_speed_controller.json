@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "create:precision_mechanism"
+    },
+    "B": {
+      "item": "ph_and_co:nail_steel"
+    },
+    "C": {
+      "item": "create:brass_casing"
+    },
+    "D": {
+      "item": "ph_and_co:reinforced_steel_plate"
+    }
+  },
+  "pattern": [
+    " A ",
+    "BCB",
+    " D "
+  ],
+  "result": {
+    "count": 1,
+    "id": "create:rotation_speed_controller"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "ph_and_co:mortar",
+  "ingredients": [
+    {
+      "count": 1,
+      "item": "minecraft:charcoal"
+    },
+    {
+      "count": 1,
+      "item": "ph_and_co:sulfur"
+    },
+    {
+      "count": 4,
+      "item": "minecraft:bone_meal"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "count": 2,
+        "id": "minecraft:gunpowder"
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "ph_and_co:heated_steel_plate"
+  },
+  "results": [
+    {
+      "count": 10,
+      "id": "ph_and_co:nail_steel"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_nails_steel"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_nails_steel"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_nails_steel"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_nails_steel"
+        }
+      ]
+    },
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_nails_steel"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_nails_steel"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_nails_steel"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_nails_steel"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "ph_and_co:incomplete_nails_steel"
+        },
+        {
+          "type": "neoforge:single",
+          "amount": 250,
+          "fluid": "minecraft:water"
+        }
+      ],
+      "results": [
+        {
+          "id": "ph_and_co:incomplete_nails_steel"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "ph_and_co:incomplete_nails_steel"
+  }
+}
