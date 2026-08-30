@@ -1,5 +1,6 @@
 package com.bruno.ph_and_co;
 
+import com.bruno.ph_and_co.item.ModItems;
 import com.bruno.ph_and_co.menu.ModMenus;
 import com.bruno.ph_and_co.recipe.ModRecipes;
 import com.bruno.ph_and_co.screen.ClientSetup;
@@ -83,16 +84,22 @@ public class PhAndCoMod {
                     output.accept(ModItems.MORTAR.get());
                     output.accept(ModItems.MORTAR_BASE.get());
                     output.accept(ModItems.PESTLE.get());
-                    output.accept(ModItems.GLASS_POWDER.get());
+
                     output.accept(ModItems.MOLTEN_GLASS_BLOB.get());
                     output.accept(ModItems.HEATED_GLASS_PANEL.get());
                     output.accept(ModItems.REINFORCED_GLASS.get());
                     output.accept(ModItems.SHATTERED_GLASS.get());
+                    output.accept(ModItems.GLASS_POWDER.get());
                     output.accept(ModItems.LOOSE_SAND.get());
 
                     output.accept(ModItems.NAIL.get());
                     output.accept(ModItems.NAIL_STEEL.get());
                     output.accept(ModItems.BRASS_SCREW.get());
+                    output.accept(ModItems.RUDIMENTARY_COMPONENT.get());
+                    output.accept(ModItems.ESSENTIAL_COMPONENT.get());
+                    output.accept(ModItems.SOPHISTICATED_COMPONENT.get());
+                    output.accept(ModItems.FLAWLESS_COMPONENT.get());
+
 
                     output.accept(ModFluids.MOLTEN_GLASS.bucket().get());
                     output.accept(ModFluids.SULFURIC_ACID.bucket().get());

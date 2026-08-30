@@ -1,0 +1,9 @@
+{
+  "type": "overgeared:cooling",
+  "input": {
+    "item": "ph_and_co:heated_copper_plate"
+  },
+  "output": {
+    "id": "overgeared:copper_plate"
+  }
+}

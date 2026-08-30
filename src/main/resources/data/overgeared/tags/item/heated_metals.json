@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "ph_and_co:heated_iron_plate",
+    "ph_and_co:heated_steel_plate",
+    "ph_and_co:heated_brass_plate",
+    "ph_and_co:heated_copper_plate",
+    "ph_and_co:heated_gold_plate",
+    "ph_and_co:heated_brass_ingot",
+    "ph_and_co:heated_gold_ingot",
+    "ph_and_co:incomplete_nails",
+    "ph_and_co:incomplete_nails_steel",
+    "ph_and_co:incomplete_reinforced_steel_plate",
+    "ph_and_co:heated_glass_panel",
+    "ph_and_co:molten_glass_blob"
+  ]
+}

@@ -1,6 +1,6 @@
 package com.bruno.ph_and_co.datagen;
 
-import com.bruno.ph_and_co.ModItems;
+import com.bruno.ph_and_co.item.ModItems;
 import com.bruno.ph_and_co.PhAndCoMod;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
@@ -40,10 +40,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SULFUR.get());
 
         // Glass
-        basicItem(ModItems.GLASS_POWDER.get());
+
         basicItem(ModItems.HEATED_GLASS_PANEL.get());
         basicItem(ModItems.REINFORCED_GLASS.get());
         basicItem(ModItems.SHATTERED_GLASS.get());
+        basicItem(ModItems.GLASS_POWDER.get());
         basicItem(ModItems.LOOSE_SAND.get());
     }
 }

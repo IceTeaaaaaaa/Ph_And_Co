@@ -1,6 +1,6 @@
 package com.bruno.ph_and_co.menu;
 
-import com.bruno.ph_and_co.ModItems;
+import com.bruno.ph_and_co.item.ModItems;
 import com.bruno.ph_and_co.recipe.ChanceResult;
 import com.bruno.ph_and_co.recipe.ModRecipes;
 import com.bruno.ph_and_co.recipe.MortarRecipe;

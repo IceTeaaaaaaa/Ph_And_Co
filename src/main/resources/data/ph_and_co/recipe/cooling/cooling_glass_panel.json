@@ -1,0 +1,9 @@
+{
+  "type": "overgeared:cooling",
+  "input": {
+    "item": "ph_and_co:heated_glass_panel"
+  },
+  "output": {
+    "id": "ph_and_co:shattered_glass"
+  }
+}

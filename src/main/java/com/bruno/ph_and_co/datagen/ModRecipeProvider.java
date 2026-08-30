@@ -1,6 +1,6 @@
 package com.bruno.ph_and_co.datagen;
 
-import com.bruno.ph_and_co.ModItems;
+import com.bruno.ph_and_co.item.ModItems;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
 import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
 import com.simibubi.create.content.kinetics.mixer.CompactingRecipe;

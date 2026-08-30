@@ -1,6 +1,6 @@
-package com.bruno.ph_and_co;
+package com.bruno.ph_and_co.item;
 
-import com.bruno.ph_and_co.item.MortarItem;
+import com.bruno.ph_and_co.PhAndCoMod;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem; // Importação necessária
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -64,6 +64,10 @@ public class ModItems {
     public static final DeferredItem<Item> NAIL = ITEMS.registerSimpleItem("nail", new Item.Properties());
     public static final DeferredItem<Item> NAIL_STEEL = ITEMS.registerSimpleItem("nail_steel", new Item.Properties());
     public static final DeferredItem<Item> BRASS_SCREW = ITEMS.registerSimpleItem("brass_screw", new Item.Properties());
+    public static final DeferredItem<Item> RUDIMENTARY_COMPONENT = ITEMS.registerSimpleItem("rudimentary_component", new Item.Properties());
+    public static final DeferredItem<Item> ESSENTIAL_COMPONENT = ITEMS.registerSimpleItem("essential_component", new Item.Properties());
+    public static final DeferredItem<Item> SOPHISTICATED_COMPONENT = ITEMS.registerSimpleItem("sophisticated_component", new Item.Properties());
+    public static final DeferredItem<Item> FLAWLESS_COMPONENT = ITEMS.registerSimpleItem("flawless_component", new Item.Properties());
 
 
 }

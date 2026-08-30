@@ -1,0 +1,9 @@
+{
+  "type": "overgeared:cooling",
+  "input": {
+    "item": "ph_and_co:heated_brass_plate"
+  },
+  "output": {
+    "id": "ph_and_co:brass_plate"
+  }
+}

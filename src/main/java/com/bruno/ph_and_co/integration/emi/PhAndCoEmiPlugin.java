@@ -1,6 +1,6 @@
 package com.bruno.ph_and_co.integration.emi;
 
-import com.bruno.ph_and_co.ModItems;
+import com.bruno.ph_and_co.item.ModItems;
 import com.bruno.ph_and_co.PhAndCoMod;
 import com.bruno.ph_and_co.recipe.ModRecipes;
 import com.bruno.ph_and_co.recipe.MortarRecipe;

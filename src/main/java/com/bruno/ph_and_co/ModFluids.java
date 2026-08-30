@@ -1,5 +1,6 @@
 package com.bruno.ph_and_co;
 
+import com.bruno.ph_and_co.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BucketItem;

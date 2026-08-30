@@ -1,0 +1,26 @@
+{
+  "type": "overgeared:forging",
+  "category": "misc",
+  "requires_blueprint": false,
+  "tier": "iron",
+  "hammering": 7,
+  "has_quality": false,
+  "needs_minigame": false,
+  "pattern": [
+    " #",
+    "# "
+  ],
+  "key": {
+    "#": {
+      "item": "ph_and_co:heated_steel_plate",
+      "requires_heated": true,
+      "transfer_nbt": false
+    }
+  },
+  "result": {
+    "id": "ph_and_co:nail_steel",
+    "count": 4
+  },
+
+  "show_notification": true
+}

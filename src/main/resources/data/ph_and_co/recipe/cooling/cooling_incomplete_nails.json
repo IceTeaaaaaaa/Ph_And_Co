@@ -1,0 +1,9 @@
+{
+  "type": "overgeared:cooling",
+  "input": {
+    "item": "ph_and_co:incomplete_nails"
+  },
+  "output": {
+    "id": "overgeared:iron_plate"
+  }
+}
