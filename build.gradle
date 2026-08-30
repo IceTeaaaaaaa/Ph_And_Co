@@ -150,6 +150,10 @@ dependencies {
 
 //    implementation "curse.maven:cold-sweat-506194:7898055"
 
+    compileOnly "curse.maven:jei-238222:8732390"
+
+    compileOnly "curse.maven:emi-580555:8081408"
+
     runtimeOnly "curse.maven:jei-238222:8732390"
 
     runtimeOnly "curse.maven:emi-580555:8081408"
