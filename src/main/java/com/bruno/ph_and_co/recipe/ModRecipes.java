@@ -13,13 +13,11 @@ public class ModRecipes {
     public static final DeferredRegister<RecipeType<?>> TYPES =
             DeferredRegister.create(Registries.RECIPE_TYPE, "ph_and_co");
 
-    // Registrando o nosso tradutor
     public static final Supplier<RecipeSerializer<MortarRecipe>> MORTAR_SERIALIZER =
             SERIALIZERS.register("mortar", MortarRecipeSerializer::new);
 
-    // Registrando o tipo da receita (É como o jogo diferencia fornalha de crafting table)
     public static final Supplier<RecipeType<MortarRecipe>> MORTAR_TYPE =
-            TYPES.register("mortar", () -> new RecipeType<MortarRecipe>() {
+            TYPES.register("mortar", () -> new RecipeType<>() {
                 @Override
                 public String toString() {
                     return "mortar";

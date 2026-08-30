@@ -40,7 +40,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(output, registries);
     }
 
-    // Helper method to fetch items from other mods safely without triggering classloader issues
     private Item getExternalItem(String id) {
         return BuiltInRegistries.ITEM.get(ResourceLocation.parse(id));
     }

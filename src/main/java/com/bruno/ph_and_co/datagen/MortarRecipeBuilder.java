@@ -1,4 +1,4 @@
-package com.bruno.ph_and_co.datagen; // Ajuste se necessário
+package com.bruno.ph_and_co.datagen;
 
 import com.bruno.ph_and_co.recipe.ChanceResult;
 import com.bruno.ph_and_co.recipe.MortarRecipe;
@@ -14,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.crafting.SizedIngredient;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import java.util.Map;
 public class MortarRecipeBuilder implements RecipeBuilder {
     private final List<SizedIngredient> ingredients = new ArrayList<>();
     private final List<ChanceResult> results = new ArrayList<>();
-    private int processTime = 20; // 20 ticks (1 segundo) é o padrão se você não definir
+    private int processTime = 20;
     private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
     @Nullable
     private String group;
@@ -49,32 +50,31 @@ public class MortarRecipeBuilder implements RecipeBuilder {
     }
 
     @Override
-    public MortarRecipeBuilder unlockedBy(String name, Criterion<?> criterion) {
+    public @NotNull MortarRecipeBuilder unlockedBy(@NotNull String name, @NotNull Criterion<?> criterion) {
         this.criteria.put(name, criterion);
         return this;
     }
 
     @Override
-    public MortarRecipeBuilder group(@Nullable String group) {
+    public @NotNull MortarRecipeBuilder group(@Nullable String group) {
         this.group = group;
         return this;
     }
 
     @Override
-    public Item getResult() {
+    public @NotNull Item getResult() {
         if (results.isEmpty()) {
             return Items.AIR;
         }
-        return results.get(0).stack().getItem();
+        return results.getFirst().stack().getItem();
     }
 
     @Override
-    public void save(RecipeOutput recipeOutput, ResourceLocation id) {
+    public void save(@NotNull RecipeOutput recipeOutput, @NotNull ResourceLocation id) {
         if (this.criteria.isEmpty()) {
-            throw new IllegalStateException("Nenhum critério de desbloqueio para a receita: " + id);
+            throw new IllegalStateException("There are no criteria for releasing the revenue. " + id);
         }
 
-        // Cria o avanço de desbloqueio para a receita aparecer no livrinho verde
         Advancement.Builder advancementBuilder = recipeOutput.advancement()
                 .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
                 .rewards(AdvancementRewards.Builder.recipe(id))
@@ -83,5 +83,13 @@ public class MortarRecipeBuilder implements RecipeBuilder {
 
         MortarRecipe recipe = new MortarRecipe(this.ingredients, this.results, this.processTime);
         recipeOutput.accept(id, recipe, advancementBuilder.build(id.withPrefix("recipes/mortar/")));
+    }
+
+    public @Nullable String getGroup() {
+        return group;
+    }
+
+    public void setGroup(@Nullable String group) {
+        this.group = group;
     }
 }

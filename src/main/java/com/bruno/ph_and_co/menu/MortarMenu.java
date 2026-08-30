@@ -1,8 +1,8 @@
 package com.bruno.ph_and_co.menu;
 
-import com.bruno.ph_and_co.ModItems; // Mude para o seu pacote!
+import com.bruno.ph_and_co.ModItems;
 import com.bruno.ph_and_co.recipe.ChanceResult;
-import com.bruno.ph_and_co.recipe.ModRecipes; // Mude para o seu pacote!
+import com.bruno.ph_and_co.recipe.ModRecipes;
 import com.bruno.ph_and_co.recipe.MortarRecipe;
 import com.bruno.ph_and_co.recipe.MortarRecipeInput;
 import net.minecraft.sounds.SoundEvents;
@@ -17,10 +17,9 @@ import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,25 +47,24 @@ public class MortarMenu extends AbstractContainerMenu {
         checkContainerSize(mortarInventory, 8);
         mortarInventory.startOpen(this.player);
 
-        // ALINHAMENTO DA TIGELA: Grid 3x2 de entrada
         for (int row = 0; row < 2; row++) {
             for (int col = 0; col < 3; col++) {
                 this.addSlot(new Slot(mortarInventory, col + (row * 3), 20 + (col * 18), 17 + (row * 18)));
             }
         }
 
-        // ALINHAMENTO DO PANO: Coluna 1x2 de saída
+
         for (int row = 0; row < 2; row++) {
             this.addSlot(new Slot(mortarInventory, 6 + row, 120, 29 + (row * 18)));
         }
 
-        // Adiciona o inventário do jogador embaixo
+
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
         this.addDataSlots(data);
     }
 
-    // --- O MOTOR DA MÁQUINA BLINDADO ---
+
     public void tick() {
         if (this.player.level().isClientSide()) return;
 
@@ -176,22 +174,22 @@ public class MortarMenu extends AbstractContainerMenu {
     }
 
     @Override
-    public void removed(Player player) {
+    public void removed(@NotNull Player player) {
         super.removed(player);
         this.clearContainer(player, this.mortarInventory);
     }
 
     @Override
-    public ItemStack quickMoveStack(Player player, int index) {
+    public @NotNull ItemStack quickMoveStack(@NotNull Player player, int index) {
         ItemStack itemstack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
-        if (slot != null && slot.hasItem()) {
-            ItemStack itemstack1 = slot.getItem();
-            itemstack = itemstack1.copy();
+        if (slot.hasItem()) {
+            ItemStack item_stack_1 = slot.getItem();
+            itemstack = item_stack_1.copy();
             if (index < 8) {
-                if (!this.moveItemStackTo(itemstack1, 8, this.slots.size(), true)) return ItemStack.EMPTY;
-            } else if (!this.moveItemStackTo(itemstack1, 0, 6, false)) return ItemStack.EMPTY;
-            if (itemstack1.isEmpty()) slot.setByPlayer(ItemStack.EMPTY);
+                if (!this.moveItemStackTo(item_stack_1, 8, this.slots.size(), true)) return ItemStack.EMPTY;
+            } else if (!this.moveItemStackTo(item_stack_1, 0, 6, false)) return ItemStack.EMPTY;
+            if (item_stack_1.isEmpty()) slot.setByPlayer(ItemStack.EMPTY);
             else slot.setChanged();
         }
         return itemstack;
@@ -205,7 +203,7 @@ public class MortarMenu extends AbstractContainerMenu {
         }
     }
 
-    // DE VOLTA AO NORMAL: 1 linha de 9
+
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));

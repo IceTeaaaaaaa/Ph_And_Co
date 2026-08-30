@@ -1,4 +1,4 @@
-package com.bruno.ph_and_co.item; // Ajuste para a sua pasta de itens
+package com.bruno.ph_and_co.item;
 
 import com.bruno.ph_and_co.menu.MortarMenu;
 import net.minecraft.network.chat.Component;
@@ -9,6 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 public class MortarItem extends Item {
 
@@ -17,17 +18,17 @@ public class MortarItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        // Se estivermos no servidor (que é quem manda na lógica)
+    public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand hand) {
+
         if (!level.isClientSide()) {
-            // Abre o menu na tela do jogador
+
             player.openMenu(new SimpleMenuProvider(
                     (id, playerInv, p) -> new MortarMenu(id, playerInv),
-                    Component.translatable("menu.ph_and_co.mortar") // O nome que vai aparecer no topo da tela
+                    Component.translatable("menu.ph_and_co.mortar")
             ));
         }
 
-        // Retorna sucesso balançando a mão do personagem
+
         return InteractionResultHolder.sidedSuccess(player.getItemInHand(hand), level.isClientSide());
     }
 }

@@ -39,5 +39,6 @@
 
   "item.ph_and_co.molten_glass_bucket": "Molten Glass Bucket",
   "item.ph_and_co.sulfuric_acid_bucket": "Sulfuric Acid Bucket",
-  "item.ph_and_co.hydrochloric_acid_bucket": "Hydrochloric Acid Bucket"
+  "item.ph_and_co.hydrochloric_acid_bucket": "Hydrochloric Acid Bucket",
+  "menu.ph_and_co.mortar": "Mortar Menu"
 }

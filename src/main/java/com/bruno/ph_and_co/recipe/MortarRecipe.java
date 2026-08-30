@@ -7,19 +7,20 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.crafting.SizedIngredient;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 
 public record MortarRecipe(
-        List<SizedIngredient> ingredients, // Ingredientes COM quantidade (ex: 9 silica)
-        List<ChanceResult> results,           // Saídas (Até 2)
-        int processTime                    // Tempo em ticks (ex: 20)
+        List<SizedIngredient> ingredients,
+        List<ChanceResult> results,
+        int processTime
 ) implements Recipe<MortarRecipeInput> {
 
     @Override
-    public boolean matches(MortarRecipeInput input, Level level) {
-        // Pega tudo que tem dentro da máquina
+    public boolean matches(MortarRecipeInput input, @NotNull Level level) {
+
         java.util.List<ItemStack> available = new java.util.ArrayList<>();
         for (int i = 0; i < input.size(); i++) {
             if (!input.getItem(i).isEmpty()) {
@@ -27,56 +28,51 @@ public record MortarRecipe(
             }
         }
 
-        // Verifica se cada ingrediente da receita existe na quantidade certa
         for (SizedIngredient sizedIng : ingredients) {
             boolean found = false;
-            for (int i = 0; i < available.size(); i++) {
-                ItemStack stack = available.get(i);
+            for (ItemStack stack : available) {
                 if (sizedIng.ingredient().test(stack) && stack.getCount() >= sizedIng.count()) {
                     found = true;
-                    stack.shrink(sizedIng.count()); // Consumo virtual só para validar
+                    stack.shrink(sizedIng.count());
                     break;
                 }
             }
-            if (!found) return false; // Faltou algum pó ou a quantidade tá errada
+            if (!found) return false;
         }
         return true;
     }
 
     @Override
-    public ItemStack assemble(MortarRecipeInput input, HolderLookup.Provider provider) {
-        // Retorna o primeiro resultado para validações do Minecraft
-        return results.isEmpty() ? ItemStack.EMPTY : results.get(0).stack().copy();
+    public @NotNull ItemStack assemble(@NotNull MortarRecipeInput input, HolderLookup.@NotNull Provider provider) {
+
+        return results.isEmpty() ? ItemStack.EMPTY : results.getFirst().stack().copy();
     }
 
     @Override
     public boolean canCraftInDimensions(int width, int height) {
-        return true; // É uma interface portátil, não depende de grid espacial
+        return true;
     }
 
     @Override
-    public ItemStack getResultItem(HolderLookup.Provider provider) {
-        return results.isEmpty() ? ItemStack.EMPTY : results.get(0).stack().copy();
+    public @NotNull ItemStack getResultItem(HolderLookup.@NotNull Provider provider) {
+        return results.isEmpty() ? ItemStack.EMPTY : results.getFirst().stack().copy();
     }
 
-    // Retorna todos os ingredientes originais
     public List<SizedIngredient> getIngredientsSized() {
         return ingredients;
     }
 
-    // Retorna todos os resultados (os 2 slots)
     public List<ChanceResult> getResults() {
         return results;
     }
 
-    // Esses dois nós vamos registrar na próxima etapa!
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public @NotNull RecipeSerializer<?> getSerializer() {
         return ModRecipes.MORTAR_SERIALIZER.get();
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public @NotNull RecipeType<?> getType() {
         return ModRecipes.MORTAR_TYPE.get();
     }
 }
