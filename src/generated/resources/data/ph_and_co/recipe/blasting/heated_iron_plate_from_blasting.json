@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 80,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "overgeared:iron_plate"
+  },
+  "result": {
+    "count": 1,
+    "id": "ph_and_co:heated_iron_plate"
+  }
+}

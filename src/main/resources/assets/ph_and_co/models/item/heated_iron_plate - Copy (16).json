@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "ph_and_co:item/heated_iron_plate"
-  }
-}

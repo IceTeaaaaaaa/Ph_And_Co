@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_basalt": {
+    "has_glass_powder": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:basalt"
+            "items": "ph_and_co:glass_powder"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ph_and_co:mortar"
+        "recipe": "minecraft:blasting/molten_glass_from_blasting_glass_powder"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_basalt"
+      "has_glass_powder"
     ]
   ],
   "rewards": {
     "recipes": [
-      "ph_and_co:mortar"
+      "minecraft:blasting/molten_glass_from_blasting_glass_powder"
     ]
   }
 }

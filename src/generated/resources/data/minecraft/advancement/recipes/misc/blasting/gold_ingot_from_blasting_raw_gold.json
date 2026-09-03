@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_basalt": {
+    "has_raw_gold": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:basalt"
+            "items": "minecraft:raw_gold"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ph_and_co:mortar_base"
+        "recipe": "minecraft:blasting/gold_ingot_from_blasting_raw_gold"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_basalt"
+      "has_raw_gold"
     ]
   ],
   "rewards": {
     "recipes": [
-      "ph_and_co:mortar_base"
+      "minecraft:blasting/gold_ingot_from_blasting_raw_gold"
     ]
   }
 }

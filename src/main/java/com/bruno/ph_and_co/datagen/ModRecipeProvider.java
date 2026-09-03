@@ -1,5 +1,6 @@
 package com.bruno.ph_and_co.datagen;
 
+import com.bruno.ph_and_co.PhAndCoMod;
 import com.bruno.ph_and_co.item.ModItems;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
 import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
@@ -20,6 +21,9 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.BlastingRecipe;
+import net.minecraft.world.item.crafting.CookingBookCategory;
+import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
@@ -47,17 +51,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(@NotNull RecipeOutput output) {
 
+        //-------------------------------------------------
+        //MORTAR RECIPES
+        //-------------------------------------------------
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MORTAR.get())
                 .requires(ModItems.MORTAR_BASE.get(), 1)
                 .requires(ModItems.PESTLE.get(), 1)
                 .unlockedBy("has_basalt", has(Items.BASALT))
-                .save(output);
+                .save(output, net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("ph_and_co", "simple_crafting/mortar"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, getExternalItem("ph_and_co:mortar_base"))
                 .pattern("   ").pattern("A A").pattern(" A ")
                 .define('A', Items.SMOOTH_BASALT)
                 .unlockedBy("has_basalt", has(Items.BASALT))
-                .save(output, net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("ph_and_co", "mortar_base"));
+                .save(output, net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("ph_and_co", "simple_crafting/mortar_base"));
 
         MortarRecipeBuilder.builder()
                 // Input
@@ -155,6 +163,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     case "pink_tulip", "peony" -> Items.PINK_DYE;
                     case "oxeye_daisy" -> Items.LIGHT_GRAY_DYE;
                     case "wither_rose" -> Items.BLACK_DYE;
+                    case "chorus_flower" -> Items.PURPLE_DYE;
                     default -> Items.GREEN_DYE;
                 };
 
@@ -401,10 +410,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_casing", has(getExternalItem("create:brass_casing")))
                 .save(output, ResourceLocation.fromNamespaceAndPath("create", "crafting/kinetics/mechanical_arm"));
 
-        // =====================================================================
-        // GLASS AND POWDERS
-        // =====================================================================
-
+        //-----------------------------------------------------
+        //PROCESSING RECIPES
+        //-----------------------------------------------------
 
 
         new ProcessingRecipeBuilder(PressingRecipe::new, ResourceLocation.fromNamespaceAndPath("ph_and_co", "glass_panel_from_blob")) {
@@ -540,6 +548,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .output(ModItems.HEATED_COPPER_PLATE.get())
                 .build(output);
 
+
         new SequencedAssemblyRecipeBuilder(ResourceLocation.fromNamespaceAndPath("ph_and_co", "nail_sequence"))
                 .require(ModItems.HEATED_IRON_PLATE.get())
                 .transitionTo(ModItems.INCOMPLETE_NAILS.get())
@@ -591,7 +600,58 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .build(output);
 
 
+        //-------------------------------------------------------
+        //SMELTING/BLASTING/SMOKING
+        //-------------------------------------------------------
 
+
+        BlastingRecipe recycledIron = new BlastingRecipe(
+                "",
+                CookingBookCategory.MISC,
+                Ingredient.of(ModItems.IRON_SCRAP.get()),
+                new ItemStack(Items.IRON_NUGGET, 6),
+                0.1f,
+                100
+        );
+        output.accept(ResourceLocation.fromNamespaceAndPath(PhAndCoMod.MOD_ID, "blasting/recycled_iron_from_blasting"), recycledIron, null);
+
+        BlastingRecipe HeatedPlateIronB = new BlastingRecipe(
+                "",
+                CookingBookCategory.MISC,
+                Ingredient.of(getExternalItem("overgeared:iron_plate")),
+                new ItemStack(ModItems.HEATED_IRON_PLATE.get(), 1),
+                0.0f,
+                80
+        );
+        output.accept(ResourceLocation.fromNamespaceAndPath(PhAndCoMod.MOD_ID, "blasting/heated_iron_plate_from_blasting"), HeatedPlateIronB, null);
+        SmeltingRecipe HeatedPlateIronS = new SmeltingRecipe(
+                "",
+                CookingBookCategory.MISC,
+                Ingredient.of(getExternalItem("overgeared:iron_plate")),
+                new ItemStack(ModItems.HEATED_IRON_PLATE.get(), 1),
+                0.0f,
+                100
+        );
+        output.accept(ResourceLocation.fromNamespaceAndPath(PhAndCoMod.MOD_ID, "smelting/heated_iron_plate_from_smelting"), HeatedPlateIronS, null);
+
+        BlastingRecipe HeatedPlateSteelB = new BlastingRecipe(
+                "",
+                CookingBookCategory.MISC,
+                Ingredient.of(getExternalItem("overgeared:steel_plate")),
+                new ItemStack(ModItems.HEATED_STEEL_PLATE.get(), 1),
+                0.0f,
+                120
+        );
+        output.accept(ResourceLocation.fromNamespaceAndPath(PhAndCoMod.MOD_ID, "blasting/heated_steel_plate_from_blasting"), HeatedPlateSteelB, null);
+        SmeltingRecipe HeatedPlateSteelS = new SmeltingRecipe(
+                "",
+                CookingBookCategory.MISC,
+                Ingredient.of(getExternalItem("overgeared:steel_plate")),
+                new ItemStack(ModItems.HEATED_STEEL_PLATE.get(), 1),
+                0.0f,
+                200
+        );
+        output.accept(ResourceLocation.fromNamespaceAndPath(PhAndCoMod.MOD_ID, "smelting/heated_steel_plate_from_smelting"), HeatedPlateSteelS, null);
 
         SimpleCookingRecipeBuilder.blasting(
                         Ingredient.of(Items.RAW_GOLD),    // Input
@@ -602,7 +662,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 )
 
                 .unlockedBy("has_raw_gold", has(Items.RAW_GOLD))
-                .save(output, ResourceLocation.withDefaultNamespace("gold_ingot_from_blasting_raw_gold"));
+                .save(output, ResourceLocation.withDefaultNamespace("blasting/gold_ingot_from_blasting_raw_gold"));
+
+        BlastingRecipe recycledSteel = new BlastingRecipe(
+                "",
+                CookingBookCategory.MISC,
+                Ingredient.of(ModItems.STEEL_SCRAP.get()),
+                new ItemStack(getExternalItem("overgeared:steel_nugget"), 3),
+                0.1f,
+                150
+        );
+        output.accept(ResourceLocation.fromNamespaceAndPath(PhAndCoMod.MOD_ID, "blasting/recycled_steel_from_blasting"), recycledSteel, null);
 
         SimpleCookingRecipeBuilder.blasting(
                         Ingredient.of(ModItems.GLASS_POWDER.get()),
@@ -613,7 +683,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 )
 
                 .unlockedBy("has_glass_powder", has(ModItems.GLASS_POWDER.get()))
-                .save(output, ResourceLocation.withDefaultNamespace("molten_glass_from_blasting_glass_powder"));
+                .save(output, ResourceLocation.withDefaultNamespace("blasting/molten_glass_from_blasting_glass_powder"));
     }
 
 

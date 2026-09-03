@@ -1,5 +1,7 @@
 package com.bruno.ph_and_co;
 
+import com.bruno.ph_and_co.block.ModBlocks;
+import com.bruno.ph_and_co.blockentity.ModBlockEntities;
 import com.bruno.ph_and_co.item.ModItems;
 import com.bruno.ph_and_co.menu.ModMenus;
 import com.bruno.ph_and_co.recipe.ModRecipes;
@@ -36,6 +38,8 @@ public class PhAndCoMod {
         modEventBus.addListener(com.bruno.ph_and_co.datagen.DataGenerators::gatherData);
 
         ModItems.ITEMS.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         ModFluids.FLUID_TYPES.register(modEventBus);
         ModFluids.FLUIDS.register(modEventBus);
@@ -99,11 +103,14 @@ public class PhAndCoMod {
                     output.accept(ModItems.ESSENTIAL_COMPONENT.get());
                     output.accept(ModItems.SOPHISTICATED_COMPONENT.get());
                     output.accept(ModItems.FLAWLESS_COMPONENT.get());
+                    output.accept(ModItems.IRON_SCRAP.get());
+                    output.accept(ModItems.STEEL_SCRAP.get());
 
 
                     output.accept(ModFluids.MOLTEN_GLASS.bucket().get());
                     output.accept(ModFluids.SULFURIC_ACID.bucket().get());
                     output.accept(ModFluids.HYDROCHLORIC_ACID.bucket().get());
+                    output.accept(ModBlocks.HEAVY_TANK.get());
 
 
                 }).build());

@@ -22,6 +22,8 @@ public class ModItems {
     public static final DeferredItem<Item> HEATED_BRASS_INGOT = ITEMS.registerSimpleItem("heated_brass_ingot", new Item.Properties());
     public static final DeferredItem<Item> GOLD_PLATE = ITEMS.registerSimpleItem("gold_plate", new Item.Properties());
     public static final DeferredItem<Item> BRASS_PLATE = ITEMS.registerSimpleItem("brass_plate", new Item.Properties());
+    public static final DeferredItem<Item> REINFORCED_STEEL_PLATE = ITEMS.registerSimpleItem("reinforced_steel_plate", new Item.Properties());
+
 
     // -------------------------------------------------------------
     // Incomplete materials
@@ -29,12 +31,11 @@ public class ModItems {
     public static final DeferredItem<Item> INCOMPLETE_NAILS = ITEMS.registerSimpleItem("incomplete_nails", new Item.Properties());
     public static final DeferredItem<Item> INCOMPLETE_NAILS_STEEL = ITEMS.registerSimpleItem("incomplete_nails_steel", new Item.Properties());
     public static final DeferredItem<Item> INCOMPLETE_REINFORCED_STEEL_PLATE = ITEMS.registerSimpleItem("incomplete_reinforced_steel_plate", new Item.Properties());
-    public static final DeferredItem<Item> REINFORCED_STEEL_PLATE = ITEMS.registerSimpleItem("reinforced_steel_plate", new Item.Properties());
+
 
     // -------------------------------------------------------------
     // Chemical Powders and Compounds
     // -------------------------------------------------------------
-
     public static final Supplier<Item> MORTAR = ITEMS.register("mortar", () -> new MortarItem(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> MORTAR_BASE = ITEMS.registerSimpleItem("mortar_base", new Item.Properties());
     public static final DeferredItem<Item> PESTLE = ITEMS.registerSimpleItem("pestle", new Item.Properties());
@@ -69,5 +70,6 @@ public class ModItems {
     public static final DeferredItem<Item> SOPHISTICATED_COMPONENT = ITEMS.registerSimpleItem("sophisticated_component", new Item.Properties());
     public static final DeferredItem<Item> FLAWLESS_COMPONENT = ITEMS.registerSimpleItem("flawless_component", new Item.Properties());
 
-
+    public static final DeferredItem<Item> IRON_SCRAP = ITEMS.registerSimpleItem("iron_scrap", new Item.Properties());
+    public static final DeferredItem<Item> STEEL_SCRAP = ITEMS.registerSimpleItem("steel_scrap", new Item.Properties());
 }

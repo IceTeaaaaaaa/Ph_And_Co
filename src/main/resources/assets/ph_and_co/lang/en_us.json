@@ -12,6 +12,8 @@
   "item.ph_and_co.heated_brass_ingot": "Heated Brass Ingot",
   "item.ph_and_co.gold_plate": "Gold Plate",
   "item.ph_and_co.brass_plate": "Brass Plate",
+  "item.ph_and_co.iron_scrap": "Iron Scrap",
+  "item.ph_and_co.steel_scrap": "Steel Scrap",
 
   "item.ph_and_co.incomplete_nails": "Incomplete Nails",
   "item.ph_and_co.incomplete_nails_steel": "Incomplete Steel Nails",
@@ -42,5 +44,7 @@
   "item.ph_and_co.molten_glass_bucket": "Molten Glass Bucket",
   "item.ph_and_co.sulfuric_acid_bucket": "Sulfuric Acid Bucket",
   "item.ph_and_co.hydrochloric_acid_bucket": "Hydrochloric Acid Bucket",
-  "menu.ph_and_co.mortar": "Mortar Menu"
+  "menu.ph_and_co.mortar": "Mortar Menu",
+
+  "block.ph_and_co.heavy_tank": "Heavy Tank"
 }

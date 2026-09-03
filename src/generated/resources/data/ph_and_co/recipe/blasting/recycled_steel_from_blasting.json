@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "ph_and_co:steel_scrap"
+  },
+  "result": {
+    "count": 3,
+    "id": "overgeared:steel_nugget"
+  }
+}
